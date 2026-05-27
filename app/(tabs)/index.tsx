@@ -159,7 +159,7 @@ const fecthVideos = async (pageNum=1, refresh = false)=>{
 
 
 
-    if(!response.ok) throw new Error(sport.message || "Failed to fetch videos");
+    if(!response.ok) throw new Error(classicFilm.message || "Failed to fetch videos");
 
 
     } catch (error) {
