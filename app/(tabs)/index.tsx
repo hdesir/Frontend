@@ -307,7 +307,7 @@ const renderItem = ({ item, index }: ItemProps) => (
         
 <ThemedText type="subtitle">Culture & Development</ThemedText>
     <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0 }}>
-<Carousel style={{position:"relative", zIndex: -1, marginBottom: -50, top: -30}}
+<Carousel style={{position:"relative", zIndex: -1, marginBottom: -20, top: 15}}
         loop
         width={windowDimensions.width/1.1}
         height={windowDimensions.height / 1.8}
@@ -360,12 +360,20 @@ const styles = StyleSheet.create({
     marginBottom: "10%"
   },
   stepContainer: {
+    
     gap: 0,
-    marginBottom: 15,
+    marginBottom: 5,
     position: "relative",
     borderTopWidth: 0.5,
     borderTopColor: "white",
-    width: "100%"
+    width: "100%",
+    height: 330,
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    paddingTop:10
+    // borderWidth: 2,
+    // borderColor: "red"
   },
   reactLogo: {
     width: "100%",
@@ -422,16 +430,17 @@ button: {
   cardContainer: {
     position: "relative",
     flex: 1,
-
     width: '100%',
     padding: '1%',
     borderRadius: '5%',
     marginBottom: '-0.5%',
     justifyContent: 'center',
     marginLeft: '0%',
+    height: "auto",
   },
   image: {
-    width: '100%',
+    height: "100%",
+    width: 'auto',
     aspectRatio: 18/11,
     borderRadius: 15,
     // borderWidth: 0.20, // 5 logical pixels thick border
