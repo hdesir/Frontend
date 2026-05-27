@@ -235,6 +235,27 @@ const renderItem = ({ item, index }: ItemProps) => (
       }>
       <GestureHandlerRootView>
 
+      <ThemedView style={styles.stepContainer}>
+<ThemedText type="subtitle">Trending in Sports</ThemedText>
+   <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, backgroundColor: "lightred"  }}>
+      <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
+        loop
+
+        width={windowDimensions.width/1.1}
+        height={windowDimensions.height / 1.8}
+        autoPlay={false}
+        data={videoSport}
+        scrollAnimationDuration={1000}
+        mode="parallax"
+				modeConfig={{
+					parallaxScrollingScale: .8,
+					parallaxScrollingOffset: 80,
+				}}
+
+        renderItem={renderItem}
+      />
+    </ThemedView>
+</ThemedView>
 
       <ThemedView style={styles.stepContainer}>
       <ThemedText type="subtitle"> Daily News</ThemedText>
@@ -256,28 +277,6 @@ const renderItem = ({ item, index }: ItemProps) => (
       />
     </ThemedView>
       </ThemedView>
-
-      <ThemedView style={styles.stepContainer}>
-        
-<ThemedText type="subtitle">Culture & Development</ThemedText>
-    <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0 }}>
-<Carousel style={{position:"relative", zIndex: -1, marginBottom: -50, top: -30}}
-        loop
-        width={windowDimensions.width/1.1}
-        height={windowDimensions.height / 1.8}
-        autoPlay={false}
-        data={videoCulture}
-        scrollAnimationDuration={1000}
-        mode="parallax"
-				modeConfig={{
-					parallaxScrollingScale: .8,
-					parallaxScrollingOffset: 80,
-				}}
-
-        renderItem={renderItem}
-      />
-    </ThemedView>
-</ThemedView>
 
       <ThemedView style={styles.stepContainer}>
 <ThemedText type="subtitle">New Music</ThemedText>
@@ -305,37 +304,15 @@ const renderItem = ({ item, index }: ItemProps) => (
 </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
-<ThemedText type="subtitle">Trending in Sports</ThemedText>
-   <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, backgroundColor: "lightred"  }}>
-      <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
+        
+<ThemedText type="subtitle">Culture & Development</ThemedText>
+    <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0 }}>
+<Carousel style={{position:"relative", zIndex: -1, marginBottom: -50, top: -30}}
         loop
-
         width={windowDimensions.width/1.1}
         height={windowDimensions.height / 1.8}
         autoPlay={false}
-        data={videoSport}
-        scrollAnimationDuration={1000}
-        mode="parallax"
-				modeConfig={{
-					parallaxScrollingScale: .8,
-					parallaxScrollingOffset: 80,
-				}}
-
-        renderItem={renderItem}
-      />
-    </ThemedView>
-</ThemedView>
-
-      <ThemedView style={styles.stepContainer}>
-<ThemedText type="subtitle">Classic Films</ThemedText>
-   <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, backgroundColor: "lightred"  }}>
-      <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
-        loop
-
-        width={windowDimensions.width/1.1}
-        height={windowDimensions.height / 1.8}
-        autoPlay={false}
-        data={videoSport}
+        data={videoCulture}
         scrollAnimationDuration={1000}
         mode="parallax"
 				modeConfig={{
