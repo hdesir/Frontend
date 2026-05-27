@@ -50,6 +50,8 @@ export default function HomeScreen() {
    const [videos, setVideos] = useState([]);
    const [videoMusic, setMusic] = useState([]);
    const [videoCulture, setCulture] = useState([]);
+   const [videoSport, setSport] = useState([]);
+   const [classicFilm, setClassicFilm] = useState([]);
   const windowDimensions = Dimensions.get('window');
   const data = [1, 2, 3]; // Your data array
 const {width} = useWindowDimensions()
@@ -61,7 +63,7 @@ const RWidth = 0.95 * width
 const fecthVideos = async (pageNum=1, refresh = false)=>{
   try{
 
-    const response = await fetch(`https://wh-webapp-backend.onrender.com/api/videos/categoryNew?q=news`);
+    const response = await fetch(`https://wh-webapp-backend.onrender.com/api/videos/indexN?q=news`);
     
 
     const data = await response.json();
@@ -82,7 +84,7 @@ const fecthVideos = async (pageNum=1, refresh = false)=>{
   const fecthMusic = async (pageNum=1, refresh = false)=>{
   try{
 
-    const response = await fetch(`https://wh-webapp-backend.onrender.com/api/videos/categoryNew?q=music`);
+    const response = await fetch(`https://wh-webapp-backend.onrender.com/api/videos/indexN?q=music`);
     
 
     const music = await response.json();
@@ -105,7 +107,7 @@ const fecthVideos = async (pageNum=1, refresh = false)=>{
   const fecthCulture = async (pageNum=1, refresh = false)=>{
   try{
 
-    const response = await fetch(`https://wh-webapp-backend.onrender.com/api/videos/categoryNew?q=Positive`);
+    const response = await fetch(`https://wh-webapp-backend.onrender.com/api/videos/indexN?q=Positive`);
     
 
     const culture = await response.json();
@@ -123,6 +125,51 @@ const fecthVideos = async (pageNum=1, refresh = false)=>{
     useEffect(() => {
     fecthCulture();
   }, []);
+
+    const fecthSport = async (pageNum=1, refresh = false)=>{
+  try{
+
+    const response = await fetch(`https://wh-webapp-backend.onrender.com/api/videos/indexN?q=Sport`);
+    
+
+    const sport = await response.json();
+    setSport(sport)
+
+
+
+    if(!response.ok) throw new Error(sport.message || "Failed to fetch videos");
+
+
+    } catch (error) {
+      console.log("Error fetching books", error);
+    } 
+  };
+    useEffect(() => {
+    fecthSport();
+  }, []);
+
+      const fecthFilms = async (pageNum=1, refresh = false)=>{
+  try{
+
+    const response = await fetch(`https://wh-webapp-backend.onrender.com/api/videos/indexCat?q=Classic`);
+    
+
+    const classicFilm = await response.json();
+    setClassicFilm(classicFilm)
+
+
+
+    if(!response.ok) throw new Error(sport.message || "Failed to fetch videos");
+
+
+    } catch (error) {
+      console.log("Error fetching books", error);
+    } 
+  };
+    useEffect(() => {
+    fecthFilms();
+  }, []);
+
 
 interface ItemProps {
     item: {
@@ -187,20 +234,7 @@ const renderItem = ({ item, index }: ItemProps) => (
         />   
       }>
       <GestureHandlerRootView>
-      {/* <ThemedView style={styles.titleContainer}>
-      <ThemedText type="title">Welcome to Watch-Haiti!</ThemedText> 
-        
-<GoogleSigninButton
-  size={GoogleSigninButton.Size.Wide}
-  color={GoogleSigninButton.Color.Dark}
-  onPress={() => {
-    // initiate sign in
-  }}
-/>
-        <Image 
-        source={require('@/assets/images/Watch-Haiti-Logo.png')}
-        style={{height: 100, width: 100}} />
-      </ThemedView> */}
+
 
       <ThemedView style={styles.stepContainer}>
       <ThemedText type="subtitle"> Daily News</ThemedText>
@@ -270,30 +304,71 @@ const renderItem = ({ item, index }: ItemProps) => (
     </ThemedView>
 </ThemedView>
 
-      {/* <ThemedView style={styles.stepContainer}>
-<ThemedText type="subtitle">Explore</ThemedText>
-    <ThemedView style={{ flex: 1 }}>
-      <Carousel
+      <ThemedView style={styles.stepContainer}>
+<ThemedText type="subtitle">Trending in Sports</ThemedText>
+   <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, backgroundColor: "lightred"  }}>
+      <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
         loop
-        width={windowDimensions.width/1.2}
-        height={windowDimensions.height / 3}
+
+        width={windowDimensions.width/1.1}
+        height={windowDimensions.height / 1.8}
         autoPlay={false}
-        data={data}
+        data={videoSport}
         scrollAnimationDuration={1000}
         mode="parallax"
 				modeConfig={{
-					parallaxScrollingScale: 0.9,
-					parallaxScrollingOffset: 55,
+					parallaxScrollingScale: .8,
+					parallaxScrollingOffset: 80,
 				}}
 
-        renderItem={({ item, index }) => (
-          <ThemedView style={styles.itemContainer}>
-            <Text>Item {item}</Text>
-          </ThemedView>
-        )}
+        renderItem={renderItem}
       />
     </ThemedView>
-</ThemedView> */}
+</ThemedView>
+
+      <ThemedView style={styles.stepContainer}>
+<ThemedText type="subtitle">Classic Films</ThemedText>
+   <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, backgroundColor: "lightred"  }}>
+      <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
+        loop
+
+        width={windowDimensions.width/1.1}
+        height={windowDimensions.height / 1.8}
+        autoPlay={false}
+        data={videoSport}
+        scrollAnimationDuration={1000}
+        mode="parallax"
+				modeConfig={{
+					parallaxScrollingScale: .8,
+					parallaxScrollingOffset: 80,
+				}}
+
+        renderItem={renderItem}
+      />
+    </ThemedView>
+</ThemedView>
+
+      <ThemedView style={styles.stepContainer}>
+<ThemedText type="subtitle">Classic Films</ThemedText>
+   <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, backgroundColor: "lightred"  }}>
+      <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
+        loop
+
+        width={windowDimensions.width/1.1}
+        height={windowDimensions.height / 1.8}
+        autoPlay={false}
+        data={classicFilm}
+        scrollAnimationDuration={1000}
+        mode="parallax"
+				modeConfig={{
+					parallaxScrollingScale: .8,
+					parallaxScrollingOffset: 80,
+				}}
+
+        renderItem={renderItem}
+      />
+    </ThemedView>
+</ThemedView>
 
       </GestureHandlerRootView>
     </ParallaxScrollView>
