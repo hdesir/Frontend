@@ -42,7 +42,8 @@
       [
         "@react-native-google-signin/google-signin"
       ],
-      "expo-font"
+      "expo-font",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,

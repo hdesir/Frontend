@@ -101,7 +101,7 @@ const route = useRoute();
 
 const fecthComment = async (videoID: string, pageNum=1, refresh = true)=>{
   try{
-    const response = await fetch(`http://192.168.1.14:5001/api/comments/videoComments?q=${videoID}`, 
+    const response = await fetch(`https://wh-webapp-backend.onrender.com/api/comments/videoComments?q=${videoID}`, 
      {method: 'GET', // Specify the method
       headers: {
         'Content-Type': 'application/json', // Inform the server the body is JSON
@@ -146,7 +146,7 @@ const renderItem = ({ item }: ItemProps) => (
       setIsLoading(true)
         const fetchData = async () => { 
             try{
-                const videoRes = await fetch(`http://192.168.1.14:5001/api/videos/find/${id}`,{
+                const videoRes = await fetch(`https://wh-webapp-backend.onrender.com/api/videos/find/${id}`,{
                   mode: 'cors'
                 })
                 const data = await videoRes.json();
@@ -172,7 +172,7 @@ window.alert(
    else{
 
   try {
-    const response = await fetch('http://192.168.1.14:5001/api/comments/', {
+    const response = await fetch('https://wh-webapp-backend.onrender.com/api/comments/', {
       method: 'POST', // Specify the method
       headers: {
         'Content-Type': 'application/json', // Inform the server the body is JSON
