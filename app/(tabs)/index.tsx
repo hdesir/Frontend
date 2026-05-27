@@ -260,7 +260,7 @@ const renderItem = ({ item, index }: ItemProps) => (
       <ThemedView style={styles.stepContainer}>
       <ThemedText type="subtitle"> Daily News</ThemedText>
       <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0 }}>
-      <Carousel style={{position:"relative", zIndex: -1, marginBottom: -50, top: -30}}
+      <Carousel style={{position:"relative", zIndex: 100, marginBottom: -50, top: -30}}
         loop
         width={windowDimensions.width/1.1}
         height={windowDimensions.height / 1.8}
