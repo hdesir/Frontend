@@ -23,6 +23,8 @@ import LoginForm from '../Login';
 
 
 
+
+
 export default function HomeScreen() {
   const getRelativeTime = (isoString: string): string => {
   const date = new Date(isoString);
@@ -226,6 +228,7 @@ const renderItem = ({ item, index }: ItemProps) => (
     
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#000000' }}
+      
       headerImage={
         <Image
           source={require('@/assets/images/Site_header.png')}
@@ -241,8 +244,9 @@ const renderItem = ({ item, index }: ItemProps) => (
       <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
         loop
 
-        width={windowDimensions.width/1.1}
-        height={windowDimensions.height / 1.8}
+
+        width= {windowDimensions.width}
+        height={375}
         autoPlay={false}
         data={videoSport}
         scrollAnimationDuration={1000}
@@ -262,8 +266,8 @@ const renderItem = ({ item, index }: ItemProps) => (
       <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0 }}>
       <Carousel style={{position:"relative", zIndex: 100, marginBottom: -50, top: -30}}
         loop
-        width={windowDimensions.width/1.1}
-        height={windowDimensions.height / 1.8}
+        width= {windowDimensions.width}
+        height={375}
         autoPlay={false}
         data={videos}
         scrollAnimationDuration={1000}
@@ -287,8 +291,8 @@ const renderItem = ({ item, index }: ItemProps) => (
         //     activeOffsetX: [-10, 10], // Enable horizontal panning
         //     failOffsetY: [-5, 5],     // Fail if significant vertical movement
         //   }}
-        width={windowDimensions.width/1.1}
-        height={windowDimensions.height / 1.8}
+        width= {windowDimensions.width}
+        height={375}
         autoPlay={false}
         data={videoMusic}
         scrollAnimationDuration={1000}
@@ -309,8 +313,8 @@ const renderItem = ({ item, index }: ItemProps) => (
     <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0 }}>
 <Carousel style={{position:"relative", zIndex: -1, marginBottom: -20, top: 15}}
         loop
-        width={windowDimensions.width/1.1}
-        height={windowDimensions.height / 1.8}
+        width= {windowDimensions.width}
+        height={375}
         autoPlay={false}
         data={videoCulture}
         scrollAnimationDuration={1000}
@@ -331,8 +335,8 @@ const renderItem = ({ item, index }: ItemProps) => (
       <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
         loop
 
-        width={windowDimensions.width/1.1}
-        height={windowDimensions.height / 1.8}
+        width= {windowDimensions.width}
+        height={375}
         autoPlay={false}
         data={classicFilm}
         scrollAnimationDuration={1000}
