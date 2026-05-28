@@ -245,7 +245,7 @@ const renderItem = ({ item, index }: ItemProps) => (
         loop
 
 
-        width= {windowDimensions.width}
+        width= {1000}
         height={375}
         autoPlay={false}
         data={videoSport}
