@@ -241,7 +241,7 @@ const renderItem = ({ item, index }: ItemProps) => (
       <ThemedView style={styles.stepContainer}>
 <ThemedText type="subtitle">Trending in Sports</ThemedText>
    <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, backgroundColor: "lightred"  }}>
-      <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
+      <Carousel style={{position:"relative", marginBottom: -50, top: -40}}
         loop
 
 
@@ -264,7 +264,7 @@ const renderItem = ({ item, index }: ItemProps) => (
       <ThemedView style={styles.stepContainer}>
       <ThemedText type="subtitle"> Daily News</ThemedText>
       <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0 }}>
-      <Carousel style={{position:"relative", zIndex: 100, marginBottom: -50, top: -30}}
+      <Carousel style={{position:"relative", zIndex: 100, marginBottom: -50, top: -40}}
         loop
         width= {360}
         height={345}
@@ -285,7 +285,7 @@ const renderItem = ({ item, index }: ItemProps) => (
       <ThemedView style={styles.stepContainer}>
 <ThemedText type="subtitle">New Music</ThemedText>
    <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, backgroundColor: "lightred"  }}>
-      <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
+      <Carousel style={{position:"relative", marginBottom: -70, top: -40}}
         loop
         // panGestureHandlerProps={{
         //     activeOffsetX: [-10, 10], // Enable horizontal panning
@@ -311,7 +311,7 @@ const renderItem = ({ item, index }: ItemProps) => (
         
 <ThemedText type="subtitle">Culture & Development</ThemedText>
     <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0 }}>
-<Carousel style={{position:"relative", zIndex: -1, marginBottom: -20, top: 15}}
+<Carousel style={{position:"relative", zIndex: -1, marginBottom: -80, top: -40}}
         loop
         width= {360}
         height={345}
@@ -332,7 +332,7 @@ const renderItem = ({ item, index }: ItemProps) => (
       <ThemedView style={styles.stepContainer}>
 <ThemedText type="subtitle">Classic Films</ThemedText>
    <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, backgroundColor: "lightred"  }}>
-      <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
+      <Carousel style={{position:"relative", marginBottom: -65, top: -40}}
         loop
 
         width= {360}
