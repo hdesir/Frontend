@@ -245,8 +245,8 @@ const renderItem = ({ item, index }: ItemProps) => (
         loop
 
 
-        width= {1000}
-        height={375}
+        width= {360}
+        height={345}
         autoPlay={false}
         data={videoSport}
         scrollAnimationDuration={1000}
@@ -266,8 +266,8 @@ const renderItem = ({ item, index }: ItemProps) => (
       <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0 }}>
       <Carousel style={{position:"relative", zIndex: 100, marginBottom: -50, top: -30}}
         loop
-        width= {windowDimensions.width}
-        height={375}
+        width= {360}
+        height={345}
         autoPlay={false}
         data={videos}
         scrollAnimationDuration={1000}
@@ -291,8 +291,8 @@ const renderItem = ({ item, index }: ItemProps) => (
         //     activeOffsetX: [-10, 10], // Enable horizontal panning
         //     failOffsetY: [-5, 5],     // Fail if significant vertical movement
         //   }}
-        width= {windowDimensions.width}
-        height={375}
+        width= {360}
+        height={345}
         autoPlay={false}
         data={videoMusic}
         scrollAnimationDuration={1000}
@@ -313,8 +313,8 @@ const renderItem = ({ item, index }: ItemProps) => (
     <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0 }}>
 <Carousel style={{position:"relative", zIndex: -1, marginBottom: -20, top: 15}}
         loop
-        width= {windowDimensions.width}
-        height={375}
+        width= {360}
+        height={345}
         autoPlay={false}
         data={videoCulture}
         scrollAnimationDuration={1000}
@@ -335,8 +335,8 @@ const renderItem = ({ item, index }: ItemProps) => (
       <Carousel style={{position:"relative", marginBottom: -50, top: -30}}
         loop
 
-        width= {windowDimensions.width}
-        height={375}
+        width= {360}
+        height={345}
         autoPlay={false}
         data={classicFilm}
         scrollAnimationDuration={1000}
@@ -371,7 +371,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 0.5,
     borderTopColor: "white",
     width: "100%",
-    height: 330,
+    height: 345,
     justifyContent: "center",
     alignContent: "center",
     alignItems: "center",
