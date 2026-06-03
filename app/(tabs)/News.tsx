@@ -86,6 +86,7 @@ interface ItemProps {
         category: string, 
         channelT: string,
         videoID: string,
+        date: string
         },
 
     index: number
@@ -93,7 +94,7 @@ interface ItemProps {
 
 
 const renderItem = ({ item, index }: ItemProps) => (
-  <Link screen= "modal" params={{ id: `${item._id}`, videoID:`${item.videoID}`}}>
+  <Link screen= "modal" params={{ id: `${item._id}`, videoID:`${item.videoID}`, relativedate: `${item.date}`}}>
     <View style = {styles.container}>
      <View style={styles.cardContainer}>
       <View style={styles.imageContainer}>
