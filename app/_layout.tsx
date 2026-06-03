@@ -20,6 +20,7 @@ import 'react-native-reanimated';
 export const unstable_settings = {
   anchor: '(tabs)',
 };
+import { useWindowDimensions, Platform } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Pressable, Text } from 'react-native';
@@ -156,6 +157,24 @@ const SignOut = async (token) => {
 }, ["black"]);  
 
   //  console.log("user", username)
+
+   const { width } = useWindowDimensions();
+  
+  // Define mobile breakpoint (typically 768px for tablets/desktops)
+  const isDesktopWeb = Platform.OS === 'web' && width >= 450;
+
+  if (isDesktopWeb) {
+    return (
+      <View style={styles.desktopContainer}>
+        <Text style={styles.heading}>Mobile Only Access</Text>
+        <Text style={styles.subtext}>
+          This application is optimized exclusively for mobile devices. {"\n"}{"\n"}Please visit this URL from your phone.{"\n"}Desktop Version and Mobile App will be coming soon.{"\n"}{"\n"}Thanks!
+        </Text>
+        <Image source={require('@/assets/images/Watch-Haiti-Logo.png')} />
+      </View>
+    );
+  }
+  else
   return (
   
   <UserContext.Provider value = {{username,picture}}>
@@ -328,5 +347,24 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 11,
     fontWeight: '500',
+  },
+    desktopContainer: {
+    flex: 1,
+    backgroundColor: '#121212',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  heading: {
+    fontSize: 24,
+    color: '#ffffff',
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  subtext: {
+    fontSize: 16,
+    color: '#aaaaaa',
+    textAlign: 'center',
+    maxWidth: 400,
   },
  })
