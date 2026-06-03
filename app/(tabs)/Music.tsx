@@ -38,9 +38,9 @@ export default function  Music() {
     {title: 'Trending', category: 'music'},
     {title: 'Live Shows', category: 'Live'},
     {title: 'Gospel', category: 'Gospel' },
-    {title: 'Kompa Direk', category: '2000s'},
-    {title: 'Retro', category: '1990s'},
-    {title: 'Orchaestra', category: 'formal'},
+    {title: '2000s', category: '2000s'},
+    {title: '1990s', category: '1990s'},
+    // {title: 'Orchaestra', category: 'formal'},
     {title: 'Rap', category: 'Rap'},
  
   ];
