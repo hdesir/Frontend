@@ -32,7 +32,7 @@ interface ItemProps {
 interface ItemProps {
   user: any
 }
-interface ItemProps {
+interface VideoProps {
     video: {
         _id: string,
         title: string,
@@ -44,7 +44,8 @@ interface ItemProps {
         category: string, 
         channelT: string,
         videoID: string,
-        user: any
+        user: any,
+        date: string,
         }
       }
 
@@ -64,18 +65,21 @@ const dropList = [
 
 
 
+
 const user = useContext(UserContext)
 const insets = useSafeAreaInsets();
 const route = useRoute();
- const { id, videoID}= route?.params;
+const { id, videoID, relativedate}= route?.params;
   const [video, setVideo] = useState({});
+  const [videodate, setVideoDate] = useState<string>('')
+  
   const [refreshing, setRefreshing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [text, onChangeText] = React.useState('')
   const [height, setHeight] = useState(40); // Initial height
   const [comments, setComments] = useState<Comment[]>([]);
   const [commentLength, setCommentLength] = useState<number>();
-  const getRelativeTime = (isoString: string): string => {
+ const getRelativeTime = (isoString: string): string => {
   const date = new Date(isoString);
   const now = new Date();
   const diffInSeconds = Math.floor((date.getTime() - now.getTime()) / 1000);
@@ -98,6 +102,7 @@ const route = useRoute();
   }
   return '';
 };
+
 
 const fecthComment = async (videoID: string, pageNum=1, refresh = true)=>{
   try{
@@ -149,8 +154,10 @@ const renderItem = ({ item }: ItemProps) => (
                 const videoRes = await fetch(`https://wh-webapp-backend.onrender.com/api/videos/find/${id}`,{
                   mode: 'cors'
                 })
-                const data = await videoRes.json();
-                setVideo(data)
+                const video = await videoRes.json();
+                setVideo(video)
+                setVideoDate(video.date)
+                console.log('video date is', video.date)
             }catch(err){}
         }
         fetchData()
@@ -162,6 +169,7 @@ const renderItem = ({ item }: ItemProps) => (
   const stringID = JSON.stringify(videoID)
 
   const [playing, setPlaying] = useState(false);
+
 
 const postComment = async (user) => {
     if (user == null){
@@ -211,6 +219,25 @@ const handlePress = () => {
     fecthComment(videoID,1,true)
   };
 
+
+
+// const renderIframe = ({video}: VideoProps) => (
+//     <View>
+//     <View style={styles.videoContainer}>
+  
+//   <iframe src= {video.videoUrl} width="auto" height= "225" frameBorder="0"
+//   allowFullscreen= "true" 
+//   webkitallowfullscreen="true" 
+//   mozallowfullscreen="true"></iframe>
+  
+//       </View>
+//     <Text style={styles.title}>{video.title}</Text>
+//     <View>
+//     <Text style={styles.info}> {video.channelT} {'\u0387'}</Text>
+//     </View>
+// </View>
+// )
+
   const onStateChange = useCallback((state: string) => {
     if (state === "ended") {
       setPlaying(false);
@@ -255,7 +282,7 @@ behavior={Platform.OS === "ios" ? "padding" : undefined}
       </View>
     <Text style={styles.title}>{video.title}</Text>
     <View>
-    <Text style={styles.info}> {video.channelT} {'\u0387'} {video.RelativeDate}</Text>
+    <Text style={styles.info}> {video.channelT} {'\u0387'} {getRelativeTime(relativedate)}</Text>
     </View>
 </View>
 
@@ -364,7 +391,7 @@ behavior={Platform.OS === "ios" ? "padding" : undefined}
       </View>
     <Text style={styles.title}>{video.title}</Text>
     <View>
-    <Text style={styles.info}> {video.channelT} {'\u0387'} {video.viewString} views {'\u0387'} {video.RelativeDate}</Text>
+    <Text style={styles.info}> {video.channelT} {'\u0387'} {video.viewString} views {'\u0387'} {getRelativeTime(relativedate)} </Text>
     </View>
 </View>
 
