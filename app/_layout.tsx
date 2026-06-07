@@ -161,7 +161,7 @@ const SignOut = async (token) => {
    const { width } = useWindowDimensions();
   
   // Define mobile breakpoint (typically 768px for tablets/desktops)
-  const isDesktopWeb = Platform.OS === 'web' && width >= 450;
+  const isDesktopWeb = Platform.OS === 'web' && width >= 768;
 
   if (isDesktopWeb) {
     return (
