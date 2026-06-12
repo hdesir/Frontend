@@ -6,7 +6,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import React, { useEffect, useState } from "react";
 import SelectDropdown from 'react-native-select-dropdown';
 // import { getDownloadUrlsFromFolder} from '../lib/index';
-import { Link } from '@react-navigation/native';
+import { Link } from  'expo-router/react-navigation';
 import { useWindowDimensions } from 'react-native';
 
 

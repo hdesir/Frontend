@@ -9,7 +9,7 @@ import {
   isSuccessResponse,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
-import { Link } from '@react-navigation/native';
+import { Link } from  'expo-router/react-navigation';
 import { Image, Pressable } from 'react-native';
 import { useEffect, useState } from 'react';
 import { Alert, Dimensions, StyleSheet, useWindowDimensions } from 'react-native';
@@ -382,13 +382,13 @@ const progress = useSharedValue<number>(0);
 		>
 			<Carousel
 				loop={true}
-        width= {390}
+        width= {width}
 				snapEnabled={true}
 				pagingEnabled={true}
 				autoPlayInterval={1000}
         onProgressChange={progress}
 				data={itemC}
-				style={{ width: 435, height: 258,}}
+				style={{ width: width, height: 258,}}
 				onSnapToItem={(index) => console.log("current index:", index)}
 				renderItem={renderCarousel}
 			/>

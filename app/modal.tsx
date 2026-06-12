@@ -1,5 +1,5 @@
 import { Text } from '@/components/Themed';
-import { useRoute } from '@react-navigation/native';
+import { useRoute } from  'expo-router/react-navigation';
 import { StatusBar } from 'expo-status-bar';
 import React, { useCallback, useEffect, useState } from "react";
 import { Alert, FlatList, KeyboardAvoidingView, Platform, Pressable, RefreshControl, StyleSheet, TextInput, useWindowDimensions, View } from 'react-native';

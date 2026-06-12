@@ -5,7 +5,7 @@ import {
   isSuccessResponse,
   statusCodes
 } from '@react-native-google-signin/google-signin';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { DarkTheme, DefaultTheme, ThemeProvider } from  'expo-router/react-navigation';
 import * as Google from "expo-auth-session/providers/google";
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -29,10 +29,10 @@ import Feather from '@expo/vector-icons/Feather';
 import Colors from '@/constants/Colors';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import { Image } from 'expo-image';
-import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+import { getFocusedRouteNameFromRoute } from  'expo-router/react-navigation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createContext } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from  'expo-router/react-navigation';
 import { useLayoutEffect } from 'react';
 import { Route } from 'expo-router/build/Route';
 import { useContext } from 'react';

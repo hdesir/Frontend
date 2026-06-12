@@ -9,7 +9,7 @@ import { useWindowDimensions } from 'react-native';
 
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { Link } from '@react-navigation/native';
+import { Link } from  'expo-router/react-navigation';
 import { Platform } from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 
