@@ -6,8 +6,9 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import React, { useEffect, useState } from "react";
 import SelectDropdown from 'react-native-select-dropdown';
 // import { getDownloadUrlsFromFolder} from '../lib/index';
-import { Link } from  'expo-router/react-navigation';
+import { Link } from  '@react-navigation/native';
 import { useWindowDimensions } from 'react-native';
+import { BlurView } from 'expo-blur';
 
 
 
@@ -112,14 +113,12 @@ const renderItem = ({ item, index }: ItemProps) => (
 
   return (
  
-    <View style={styles.container}>
+    <BlurView style={[styles.container]}>
 
-  
-      <View>      
+  <BlurView style= {{flex: 2, paddingLeft:5, flexDirection: "column-reverse" ,width: "100%", justifyContent:"center", position:"absolute", zIndex: 10, top: 0, height: "auto", marginBottom:100}}>
+       
         
-       <Text style ={styles.title}> Trending Movies</Text>
-              <View style={{ marginTop: 5, marginBottom: -20,justifyContent: 'center', alignItems: 'center' }}>
-              
+       <Text style ={styles.title}> Trending Movies </Text>      
        <SelectDropdown 
            data={MovieCategories}
            
@@ -154,13 +153,15 @@ const renderItem = ({ item, index }: ItemProps) => (
              );
            }}
            showsVerticalScrollIndicator={false}
-           dropdownStyle={{backgroundColor: '#444546ff', borderRadius: 8,}}
+          dropdownStyle={{backgroundColor: '#444546ff', borderRadius: 8,}}
          />
        
-           </View>
-           </View>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-    <View style={styles.container}>
+        
+      
+
+</BlurView>
+    <View style = {{paddingTop: 60, height: "auto", flex: 1}}>
+    <BlurView style={[styles.container]}>
         <FlatList data ={videos}
         renderItem={renderItem}
         keyExtractor={(item) => item._id} 
@@ -174,8 +175,9 @@ const renderItem = ({ item, index }: ItemProps) => (
         }
         />
 
+    </BlurView>
     </View>
-    </View>
+    </BlurView>
 
   );
 };
@@ -184,7 +186,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     width: '100%',
-    backgroundColor: '#01010123',
+    // backgroundColor: '#01010123',
   },
     buttonContainer: {
 borderRadius: 10,
@@ -206,8 +208,9 @@ button: {
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    borderWidth: 2,
-    paddingTop: 10  
+    paddingTop: 10,  
+    paddingHorizontal:5,
+    borderRadius: 50,
   },
   separator: {
     marginVertical: 30,
@@ -321,18 +324,19 @@ pickerItem: {
   },
    dropdownButtonStyle: {
       width: 125,
-      height: 50,
-      backgroundColor: '#515253ff',
+      height: 37,
+      backgroundColor: 'rgb(44, 126, 209)',
       borderRadius: 12,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
       paddingHorizontal: 12,
-      marginTop: 5
+      marginTop: 5,
+      marginLeft: 5
     },
     dropdownButtonTxtStyle: {
       flex: 1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: '500',
       color: '#fcfcfcff',
     },
@@ -344,7 +348,7 @@ pickerItem: {
       marginRight: 8,
     },
     dropdownMenuStyle: {
-      backgroundColor: '#444546ff',
+      backgroundColor: 'rgb(13, 13, 13)',
       borderRadius: 8,
     },
     dropdownItemStyle: {

@@ -7,7 +7,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import React, { useEffect, useState } from "react";
 
 // import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Link } from  'expo-router/react-navigation';
+import { Link } from  '@react-navigation/native';
 import { useWindowDimensions } from 'react-native';
 
 

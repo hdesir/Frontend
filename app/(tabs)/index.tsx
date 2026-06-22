@@ -2,28 +2,15 @@ import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { Text } from '@/components/Themed';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import {
-  GoogleSignin,
-  GoogleSigninButton,
-  isErrorWithCode,
-  isSuccessResponse,
-  statusCodes,
-} from '@react-native-google-signin/google-signin';
-import { Link } from  'expo-router/react-navigation';
+import { Link } from  '@react-navigation/native';
 import { Image, Pressable } from 'react-native';
 import { useEffect, useState } from 'react';
 import { Alert, Dimensions, StyleSheet, useWindowDimensions } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Carousel from 'react-native-reanimated-carousel';
-import { Stack } from 'expo-router';
-import * as WebBrowser from "expo-web-browser";
 import * as Google from "expo-auth-session/providers/google";
-import { Button } from 'react-native';
-import LoginForm from '../Login';
-import HeaderCarousel from '@/components/headerCarousel';
-import {interpolate, useAnimatedRef, useAnimatedStyle, useScrollOffset, useScrollViewOffset} from 'react-native-reanimated';
+import {interpolate, useAnimatedRef, useAnimatedStyle, useScrollOffset,useScrollViewOffset} from 'react-native-reanimated';
 import { View } from '@/components/Themed';
-import {FlatList} from 'react-native';
 import { Animated } from 'react-native';
 import React, { useRef } from 'react';
 import { BlurView } from 'expo-blur';

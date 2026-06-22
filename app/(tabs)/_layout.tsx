@@ -1,6 +1,7 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
+import { Link} from '@react-navigation/native';
+import { Tabs } from 'expo-router';
 import { Pressable, Text } from 'react-native';
 import { View} from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
