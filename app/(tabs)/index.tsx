@@ -62,7 +62,7 @@ const [itemC, SetCarousel] = useState([
    const [classicFilm, setClassicFilm] = useState([]);
   const windowDimensions = Dimensions.get('window');
 
-const {width} = useWindowDimensions()
+const {width} = useWindowDimensions() || 350
 const RWidth = 0.95 * width
   const [userInfo, setUserInfo] = useState<any>(null)
   const [request, response, promptAsyc] = Google.useAuthRequest({
