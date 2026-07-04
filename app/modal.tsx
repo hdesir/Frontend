@@ -112,6 +112,7 @@ const fecthComment = async (videoID: string, pageNum=1, refresh = true)=>{
         'Content-Type': 'application/json', // Inform the server the body is JSON
       }
   });
+console.log("VideoID:", videoID);
 const data = await response.json();
 
     setComments(data)
@@ -193,7 +194,7 @@ window.alert(
         picture: user.picture,
         createdAt: `${new Date().toISOString()}`,
       }),
-    });
+    })
 
     if (!response.ok) {
       // Handle non-successful HTTP statuses
@@ -250,7 +251,7 @@ const handlePress = () => {
   }, []);
 
 const altFrame = 
-  ["68ad21d09adff8066264a158",
+["68ad21d09adff8066264a158",
 "68ad21d09adff8066264a146",
 "68ad21d09adff8066264a14c",
 "692b635198f185de3613cdc8",
@@ -259,7 +260,13 @@ const altFrame =
 "693f4aadf196ebd2df8e79eb",
 "68ad21d09adff8066264a152",
 "68ad21d09adff8066264a14f",
-"69765a7f819d1526d389d0de"]
+"69765a7f819d1526d389d0de",
+"6a49295913694d7dfe131374",
+"69765a80819d1526d389d0f2",
+"69765a7f819d1526d389d0ea",
+"69765a7e819d1526d389d0da",
+"69765a82819d1526d389d126",
+"69765a7e819d1526d389d0ca"]
 
 if (altFrame.includes(id))
   {

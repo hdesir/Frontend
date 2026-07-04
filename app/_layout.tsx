@@ -22,7 +22,7 @@ export const unstable_settings = {
 };
 import { useWindowDimensions, Platform } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
+import { Link } from  '@react-navigation/native';
 import { Pressable, Text } from 'react-native';
 import { View} from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
@@ -184,20 +184,32 @@ const SignOut = async (token) => {
         <Stack.Screen name="(tabs)" options={({ route }) => ({
           
         headerLeft : () => (
+      
           <View style={{height: 70, flexDirection: "row", justifyContent:"center", alignItems: "center",left: 5, top: 5}}>
+            <TouchableOpacity 
+      onPress={() => navigation.navigate('/')} // Replace 'Index' with your Home/Index route name
+      activeOpacity={0.8}
+    >
        <Image 
         source={require('@/assets/images/Watch-Haiti-Logo.png')}
         style={{position: "relative", height: 70, width: 70}} />
-
+</TouchableOpacity>
         </View>
+        
     ),
           headerTitle : () => (
+          
+      <TouchableOpacity 
+      onPress={() => navigation.navigate('/')} // Replace 'Index' with your Home/Index route name
+      activeOpacity={0.8}
+    >
           <View style={{height: 70, flexDirection: "row", justifyContent:"center", alignItems: "center", top: 5}}>
-       
+                   
         <View style={{borderWidth: 1, borderColor: "white", borderRadius: 9, flex:1, padding: 5}}>
         <Text style= {{color: "white", fontSize: 18, fontFamily: "San Francisco", fontWeight:"bold"}}>Watch-Haiti.com</Text>
         </View>
         </View>
+        </TouchableOpacity>
     ),
     headerTitleAlign: "center",
           headerRight: () => {
@@ -254,11 +266,6 @@ const SignOut = async (token) => {
                 }
                                     
                 },
-
-
-
-                                    
-                 
                 })} />{children}   
         <Stack.Screen name="modal" options={{ presentation: 'card', title: 'Watch Haiti',
                     headerRight: () => {

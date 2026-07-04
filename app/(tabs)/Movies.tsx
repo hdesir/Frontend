@@ -30,9 +30,6 @@ export default function  Movies() {
       {title: 'Popular', category: 'Movie'},
       {title: 'History', category: 'Doc'},
         {title: 'Classic', category: 'Classic'},
-
-
-   
     ];
 
 const {width} = useWindowDimensions()
@@ -115,7 +112,7 @@ const renderItem = ({ item, index }: ItemProps) => (
  
     <BlurView style={[styles.container]}>
 
-  <BlurView style= {{flex: 2, paddingLeft:5, flexDirection: "column-reverse" ,width: "100%", justifyContent:"center", position:"absolute", zIndex: 10, top: 0, height: "auto", marginBottom:100}}>
+  <BlurView style= {{flex: 2, paddingLeft:5, flexDirection: "column-reverse" ,width: "100%", justifyContent:"center", position:"absolute", zIndex: 10, top: 0, height: "auto"}}>
        
         
        <Text style ={styles.title}> Trending Movies </Text>      
@@ -156,15 +153,13 @@ const renderItem = ({ item, index }: ItemProps) => (
           dropdownStyle={{backgroundColor: '#444546ff', borderRadius: 8,}}
          />
        
-        
-      
-
 </BlurView>
-    <View style = {{paddingTop: 60, height: "auto", flex: 1}}>
-    <BlurView style={[styles.container]}>
+    <View style = {{paddingTop: 20, height: "auto", flex: 1}}>
+    <View style={[styles.container]}>
         <FlatList data ={videos}
         renderItem={renderItem}
         keyExtractor={(item) => item._id} 
+        contentContainerStyle={{ paddingTop: 55}} // Adds scrollable gap at the top
         refreshControl={
 
           <RefreshControl
@@ -175,7 +170,7 @@ const renderItem = ({ item, index }: ItemProps) => (
         }
         />
 
-    </BlurView>
+    </View>
     </View>
     </BlurView>
 

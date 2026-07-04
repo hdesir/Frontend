@@ -1,6 +1,6 @@
 import { FlatList, Image, RefreshControl, StyleSheet } from 'react-native';
 
-
+import { BlurView } from 'expo-blur';
 import { Text, View, } from '@/components/Themed';
 // import { ScrollView } from 'react-native-reanimated/lib/typescript/Animated';
 import AntDesign from '@expo/vector-icons/AntDesign';
@@ -124,55 +124,59 @@ const renderItem = ({ item, index }: ItemProps) => (
 
   return (
  
-    <View style={styles.container}>
-      <View>
-       <Text style ={styles.title}>{category} | Music</Text>
-       <View style={{ marginTop: 15, marginBottom: -10,justifyContent: 'center', alignItems: 'center' }}>
+    <BlurView style={styles.container}>
+  <BlurView style= {{flex: 2, paddingLeft:5, flexDirection: "column-reverse" ,width: "100%", justifyContent:"center", position:"absolute", zIndex: 10, top: 0, height: "auto", marginBottom:150}}>
        
-<SelectDropdown 
-    data={MuiscCategories}
-    
-    onSelect={(selectedItem, index) => {
-    fecthVideos(selectedItem.category, 1, true)
-    setQuery(selectedItem.category)
-    setCategory(selectedItem.title)
-    setPage(1)
-    console.log(query);
-    
-    }}
-    renderButton={(selectedItem, isOpened) => {
-      return (
-        <View style={styles.dropdownButtonStyle}>
-          <Image style ={{position: "absolute", maxHeight: "30%", width: "12%", zIndex: 1, right: 12}} source={require('../(tabs)/img/Logo/icons8-down-arrow-50.png')}/>
-          {selectedItem && (
-            <Text style ={{display:"none"}}>{selectedItem.icon}</Text>
-          )}
-          <Text style={styles.dropdownButtonTxtStyle}>
-            {(selectedItem && selectedItem.title) || 'Trending'}
-          </Text>
         
-        </View>
-      );
-    }}
-    renderItem={(item, index, isSelected) => {
-      return (
-        <View style={{...styles.dropdownItemStyle, ...(isSelected && {backgroundColor: '#D2D9DF'})}}>
-          <Text style={styles.dropdownItemTxtStyle}>{item.title}</Text>
-        </View>
-      );
-    }}
-    showsVerticalScrollIndicator={false}
-    dropdownStyle={{backgroundColor: '#444546ff', borderRadius: 8,}}
-  />
-
-    </View>
-    </View>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+       <Text style ={styles.title}> Trending Music </Text>      
+       <SelectDropdown 
+           data={MuiscCategories}
+           
+           onSelect={(selectedItem, index) => {
+           fecthVideos(selectedItem.category, 1, true)
+           setQuery(selectedItem.category)
+           setCategory(selectedItem.title)
+           setPage(1)
+           console.log(query);
+           
+           }}
+           renderButton={(selectedItem, isOpened) => {
+             return (
+              
+               <View style={styles.dropdownButtonStyle}>
+                <Image style ={{position: "absolute", maxHeight: "30%", width: "12%", zIndex: 1, right: 12}} source={require('../(tabs)/img/Logo/icons8-down-arrow-50.png')}/>
+                 {selectedItem && (
+                   <Text style ={{display:"none"}}>{selectedItem.icon}</Text>
+                 )}
+                 <Text style={styles.dropdownButtonTxtStyle}>
+                   {(selectedItem && selectedItem.title) || 'Trending'}
+                 </Text>
+               
+               </View>
+             );
+           }}
+           renderItem={(item, index, isSelected) => {
+             return (
+               <View style={{...styles.dropdownItemStyle, ...(isSelected && {backgroundColor: '#D2D9DF'})}}>
+                 <Text style={styles.dropdownItemTxtStyle}>{item.title}</Text>
+               </View>
+             );
+           }}
+           showsVerticalScrollIndicator={false}
+          dropdownStyle={{backgroundColor: '#444546ff', borderRadius: 8,}}
+         />
+       
+</BlurView>
+         <View style = {{paddingTop: 20, height: "auto", flex: 1}}>
+         
     <View style={styles.container}>
+       {/* <View style= {{flex: 1, backgroundColor: "#ffffff00", position: "relative", borderColor: "red", borderWidth: 2, height: 1000, zIndex:100, width: "100%"}}></View> */}
+      <View style={styles.container}>
         <FlatList 
         data ={videos}
         renderItem={renderItem}
         keyExtractor={(item) => item._id} 
+        contentContainerStyle={{ paddingTop: 55}} // Adds scrollable gap at the top
         refreshControl={
 
           <RefreshControl
@@ -182,9 +186,10 @@ const renderItem = ({ item, index }: ItemProps) => (
           />
         }
         />
-
+</View>
     </View>
-    </View> 
+    </View>
+    </BlurView> 
 
   );
 };
@@ -196,7 +201,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
     buttonContainer: {
-borderRadius: 10,
+borderRadius: 0,
     overflow: 'hidden', // Helps manage the background if you add one
     // backgroundColor: '#940f0f', // Example background color
     },
@@ -215,8 +220,9 @@ button: {
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    borderWidth: 2,
-    paddingTop: 10   
+    paddingTop: 10,  
+    paddingHorizontal:5,
+    borderRadius: 50,
   },
   separator: {
     marginVertical: 30,
@@ -333,18 +339,19 @@ pickerItem: {
   },
    dropdownButtonStyle: {
       width: 125,
-      height: 50,
-      backgroundColor: '#515253ff',
+      height: 37,
+      backgroundColor: 'rgb(209, 44, 44)',
       borderRadius: 12,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
       paddingHorizontal: 12,
-      marginTop: 5
+      marginTop: 5,
+      marginLeft: 5
     },
     dropdownButtonTxtStyle: {
       flex: 1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: '500',
       color: '#fcfcfcff',
     },
@@ -356,7 +363,7 @@ pickerItem: {
       marginRight: 8,
     },
     dropdownMenuStyle: {
-      backgroundColor: '#444546ff',
+      backgroundColor: 'rgb(13, 13, 13)',
       borderRadius: 8,
     },
     dropdownItemStyle: {

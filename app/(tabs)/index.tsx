@@ -60,9 +60,9 @@ const [itemC, SetCarousel] = useState([
    const [videoCulture, setCulture] = useState([]);
    const [videoSport, setSport] = useState([]);
    const [classicFilm, setClassicFilm] = useState([]);
-  const windowDimensions = Dimensions.get('window');
-
-const {width} = useWindowDimensions() || 350
+   
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
+const {width} = useWindowDimensions()
 const RWidth = 0.95 * width
   const [userInfo, setUserInfo] = useState<any>(null)
   const [request, response, promptAsyc] = Google.useAuthRequest({
@@ -245,14 +245,14 @@ const renderItem = ({ item, index }: ItemProps) => (
 
 const renderCarousel = ({item}: CarouselProps) => (
   
-    <ThemedView style = {styles.container}>
-      <View style= {{flex: 1}}>
+    <ThemedView style = {[{flex: 1, overflow: "visible"},styles.container]}>
+      <View style= {{flex: 1, overflow: "visible"}}>
 
         <Image style={
-            [{height: 300, width: width, resizeMode: "contain", padding: 0, marginTop: -10}, imageAnimatedStyle]}
+            [{height: 300, width: SCREEN_WIDTH, resizeMode: "cover", padding: 0, marginTop: -10}, imageAnimatedStyle]}
           source={{uri: item.uri}}  /> 
 
-          <BlurView style={{position: 'absolute', bottom: 0, width: "100%", height: "10%", borderWidth: 0, borderColor: "transparent"}}>
+          <BlurView style={{position: 'absolute', flex: 1,  bottom: 0, width: "100%", height: "auto", borderWidth: 0, borderColor: "transparent"}}>
             <Text style={{ fontSize: 17,fontWeight: 'normal', paddingTop: 0}}>{item.title}</Text>
             <Link screen= "modal" params={{ id: `${item._id}`, videoID:`${item.videoID}`, relativedate: `${item.date}`}}>
                 <Pressable style={styles.customButton} onPress={() => {}}>
@@ -344,38 +344,17 @@ const SlideItem: React.FC<Props> = (props) => {
 
 const progress = useSharedValue<number>(0);
   return (
-    // <Animated.ScrollView ref = {scrollRef} scrollEventThrottle={16}></Animated.ScrollView>
     <Animated.ScrollView  style={{backgroundColor: "black"}}>
-      {/* <View>
-        <Animated.FlatList
-        data={itemC}
-        keyExtractor={(item) => item.id}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        snapToInterval={ITEM_SIZE}
-        decelerationRate="fast"
-        contentContainerStyle={{ alignItems: 'center', margin: 0, padding: 0, height: 300, flex:1 }}
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-          { useNativeDriver: true }
-        )}
-        scrollEventThrottle={16}
-        renderItem={renderCarousel}
-      />
-      </View> */}
-      		<View
-			id="carousel-component"
-			
-		>
+    <View id="carousel-component">
 			<Carousel
 				loop={true}
-        width= {width}
+        width= {SCREEN_WIDTH}
 				snapEnabled={true}
 				pagingEnabled={true}
 				autoPlayInterval={1000}
         onProgressChange={progress}
 				data={itemC}
-				style={{ width: width, height: 258,}}
+				style={{ width: SCREEN_WIDTH, height: 250}}
 				onSnapToItem={(index) => console.log("current index:", index)}
 				renderItem={renderCarousel}
 			/>
@@ -802,18 +781,19 @@ pickerItem: {
   },
   customButton: {
     position: 'absolute',
-    right: 5,
+    right: 20,
     bottom: 2,
-    width: '15%',           // Percentage width for responsiveness
-    paddingVertical: 15,    // Controls vertical thickness/height safely
+    width: 50,           // Percentage width for responsiveness
+    paddingVertical: 10,    // Controls vertical thickness/height safely
     paddingHorizontal: 20,  // Controls horizontal spacing
-    backgroundColor: '#000000',
-    borderRadius: 8,
+    backgroundColor: '#4A90E2',
+    borderColor: "#f10e0e",
+    borderRadius: 360,
     alignItems: 'center',   // Centers text horizontally
   },
   buttonText: {
     color: '#ffffff',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
   },
 });
