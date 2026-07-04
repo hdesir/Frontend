@@ -348,13 +348,13 @@ const progress = useSharedValue<number>(0);
     <View id="carousel-component">
 			<Carousel
 				loop={true}
-        width= {500}
+        width= {429}
 				snapEnabled={true}
 				pagingEnabled={true}
 				autoPlayInterval={1000}
         onProgressChange={progress}
 				data={itemC}
-				style={{ width: 500, height: 250}}
+				style={{ width: 429, height: 250}}
 				onSnapToItem={(index) => console.log("current index:", index)}
 				renderItem={renderCarousel}
 			/>
