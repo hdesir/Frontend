@@ -249,7 +249,7 @@ const renderCarousel = ({item}: CarouselProps) => (
       <View style= {{flex: 1, overflow: "visible"}}>
 
         <Image style={
-            [{height: 300, width: 500, resizeMode: "cover", padding: 0, marginTop: -10}, imageAnimatedStyle]}
+            [{height: 300, width: 410, resizeMode: "cover", padding: 0, marginTop: -10}, imageAnimatedStyle]}
           source={{uri: item.uri}}  /> 
 
           <BlurView style={{position: 'absolute', flex: 1,  bottom: 0, width: "100%", height: "auto", borderWidth: 0, borderColor: "transparent"}}>
@@ -348,13 +348,13 @@ const progress = useSharedValue<number>(0);
     <View id="carousel-component">
 			<Carousel
 				loop={true}
-        width= {429}
+        width= {410}
 				snapEnabled={true}
 				pagingEnabled={true}
 				autoPlayInterval={1000}
         onProgressChange={progress}
 				data={itemC}
-				style={{ width: 429, height: 250}}
+				style={{ width: 410, height: 250}}
 				onSnapToItem={(index) => console.log("current index:", index)}
 				renderItem={renderCarousel}
 			/>
