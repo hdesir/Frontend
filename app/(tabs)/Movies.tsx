@@ -115,7 +115,7 @@ const renderItem = ({ item, index }: ItemProps) => (
   <BlurView style= {{flex: 2, paddingLeft:5, flexDirection: "column-reverse" ,width: "100%", justifyContent:"center", position:"absolute", zIndex: 10, top: 0, height: "auto"}}>
        
         
-       <Text style ={styles.title}> Trending Movies </Text>      
+       <Text style ={styles.title}>Movies </Text>      
        <SelectDropdown 
            data={MovieCategories}
            
