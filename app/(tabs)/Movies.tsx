@@ -28,7 +28,7 @@ export default function  Movies() {
     const [category, setCategory] = useState("Movie");
     const MovieCategories = [
       {title: 'Popular', category: 'Movie'},
-      {title: 'History', category: 'Doc'},
+      {title: 'Documentary', category: 'Doc'},
         {title: 'Classic', category: 'Classic'},
     ];
 
@@ -318,7 +318,7 @@ pickerItem: {
     // fontFamily: 'YourCustomFont', // Note: custom fonts require native setup
   },
    dropdownButtonStyle: {
-      width: 125,
+      width: 135,
       height: 37,
       backgroundColor: 'rgb(44, 126, 209)',
       borderRadius: 12,

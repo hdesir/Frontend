@@ -77,7 +77,7 @@ interface ItemsRefType {
 //   try {
 //     // Await the function call to get the actual data
 //     const allData = await getDownloadUrlsFromFolder();
-//     console.log(allData)
+//     console.dir(allData, { maxArrayLength: null })
 //     return allData
     
 //     // Use the data here
