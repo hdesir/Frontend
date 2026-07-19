@@ -266,7 +266,8 @@ const altFrame =
 "69765a7f819d1526d389d0ea",
 "69765a7e819d1526d389d0da",
 "69765a82819d1526d389d126",
-"69765a7e819d1526d389d0ca"]
+"69765a7e819d1526d389d0ca",
+"6a5d5a0c13694d7dfe132d6f"]
 
 if (altFrame.includes(id))
   {
