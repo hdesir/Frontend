@@ -338,14 +338,16 @@ pickerItem: {
     // fontFamily: 'YourCustomFont', // Note: custom fonts require native setup
   },
    dropdownButtonStyle: {
-      width: 135,
+      alignSelf: 'baseline', 
+      paddingRight: 32,
+      paddingLeft: 10,
       height: 37,
       backgroundColor: 'rgb(209, 44, 44)',
       borderRadius: 12,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      paddingHorizontal: 12,
+      
       marginTop: 5,
       marginLeft: 5
     },
@@ -376,7 +378,7 @@ pickerItem: {
     },
     dropdownItemTxtStyle: {
       flex: 1,
-      fontSize: 18,
+      fontSize: 15,
       fontWeight: '500',
       color: '#ffffffff',
     },
