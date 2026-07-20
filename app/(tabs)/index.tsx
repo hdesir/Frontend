@@ -369,7 +369,7 @@ const progress = useSharedValue<number>(0);
       <GestureHandlerRootView>
 
       <ThemedView style={styles.stepContainer}>
-<ThemedText type="subtitle" style= {{paddingBottom: 0, paddingRight: 15, paddingLeft:15, borderWidth: 0.5, borderColor: "#003566", borderRadius: 5, backgroundColor: "#c20114", marginBottom: 5}}>Trending in Sports</ThemedText>
+<ThemedText type="subtitle" style= {{paddingBottom: 0, paddingRight: 15, paddingLeft:15, borderWidth: 0.5, borderColor: "#003566", borderRadius: 5, backgroundColor: "#003566", marginBottom: 5}}>Trending in Sports</ThemedText>
       <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, overflow: "visible", width: "105%", padding: 0, zIndex: 100, height: 250, backgroundColor: "black" }}>
           <Carousel style={{position:"relative", marginBottom: -50, top: -20, overflow: "visible", width: 360, backgroundColor: "#003566", height: 360, alignItems: "center", justifyContent: "center", zIndex:50, borderRadius: 360, borderWidth: 0.5}}
         loop
@@ -413,7 +413,7 @@ const progress = useSharedValue<number>(0);
       </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
-<ThemedText type="subtitle" style= {{paddingBottom: 0, paddingRight: 15, paddingLeft:15, borderWidth: 0.5, borderColor: '"#003566"', borderRadius: 5, backgroundColor: "#c20114", marginBottom: 5}}>New Music</ThemedText>
+<ThemedText type="subtitle" style= {{paddingBottom: 0, paddingRight: 15, paddingLeft:15, borderWidth: 0.5, borderColor: '"#003566"', borderRadius: 5, backgroundColor: '#003566', marginBottom: 5}}>New Music</ThemedText>
        <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, overflow: "visible", width: "105%", padding: 50, zIndex: 100, backgroundColor: "black" }}>
           <Carousel style={{position:"relative", marginBottom: -50, top: -20, overflow: "visible", width: 360, backgroundColor: "#003566", height: 360, alignItems: "center", justifyContent: "center", zIndex:50, borderRadius: 360, borderWidth: 0.5}}
         // panGestureHandlerProps={{
@@ -459,7 +459,7 @@ const progress = useSharedValue<number>(0);
 </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
-<ThemedText type="subtitle" style= {{paddingBottom: 0, paddingRight: 15, paddingLeft:15, borderWidth: 0.5, borderColor: '"#003566"', borderRadius: 5, backgroundColor: "#c20114", marginBottom: 5}}>Classic Films</ThemedText>
+<ThemedText type="subtitle" style= {{paddingBottom: 0, paddingRight: 15, paddingLeft:15, borderWidth: 0.5, borderColor: '"#003566"', borderRadius: 5, backgroundColor: '#003566', marginBottom: 5}}>Classic Films</ThemedText>
        <ThemedView style={{ flex: 1, alignItems: "center", justifyContent: "center", top:0, overflow: "visible", width: "105%", padding: 50, zIndex: 100, backgroundColor: "black" }}>
           <Carousel style={{position:"relative", marginBottom: -50, top: -30, overflow: "visible", width: 360, backgroundColor: "#003566", height: 360, alignItems: "center", justifyContent: "center", zIndex:50, borderRadius: 360, borderWidth: 0.5}}
         width= {360}
